@@ -1,0 +1,27 @@
+<!-- 
+	####################
+	INSTRUÇÔES DO DESAFIO
+	#####################
+
+	1. Transformar a lista em tabela;
+	2. Adicionar uma coluna para que a quantidade do produto seja exibida também;
+	3. Limpar a tabela  ao adicionar um novo produto, fazendo que a tabela não repita linhas; 
+	4. Adicionar dois inputs de texto para que seja possível personalizar o nome e quantidade do novo produto;
+	5. Refatorar as partes do código onde seja possível aplicar features do ES6 (let, const, map, arrow function); 
+-->
+
+<span id="span_message"></span>
+<div class="container">
+    <div>
+		<table id="table-produtos" class="table-fill"></table><br>
+		<input type="text" class="form-control" name="product" id="product" placeholder="Product Name"><br>
+		<input type="text" class="form-control" name="quantity" id="quantity" placeholder="Product Quantity"><br>
+		<button type="button" class="btn btn-primary" onclick="adicionaItem()" style="float: right">Add Product</button>
+	</div>
+</div>
+	
+<script src="js/jquery-1.11.3.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="js/script.js"></script>
+<link rel="stylesheet" type="text/css" href="css/style.css">
