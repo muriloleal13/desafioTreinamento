@@ -28,13 +28,13 @@ function attTable() {
     let cols = "<th>Product</td><th>Quantity</td>";  
     newRow.append(cols);
     table.append(newRow);    
-    for(let i=0; i < products.length; i++) {
+    products.map((elem) => {
         let newRow = $("<tr>");
-        let cols = `<td> ${products[i].name} </td>
-                    <td> ${products[i].quantity} </td>`;
+        let cols = `<td> ${elem.name} </td>
+                    <td> ${elem.quantity} </td>`;
         newRow.append(cols);
         table.append(newRow);
-    }
+    });
 }
 
 function limpaTabela(){
@@ -47,7 +47,6 @@ function adicionaItem() {
     let newProduct = $('#product').val();
     let newQuantity = parseInt($('#quantity').val());
     let arrExists = products.filter(elem => elem.name == newProduct);
-    console.log(`${newProduct} ${newQuantity} ${newProduct == ''} ${isNaN(newQuantity)}`);
     if(((typeof(newProduct) !== 'string' || typeof(newQuantity) !== 'number') || newProduct == '' || isNaN(newQuantity))){
         addedProduct('danger', 'Error');
     }else if(arrExists.length == 0){
