@@ -23,7 +23,7 @@ let addedProduct = (alert, type) => {
     $('#div1').fadeOut(3000);
 }
 
-function attTable() {
+const attTable = () => {
     let newRow = $("<tr>");
     let cols = "<th>Product</td><th>Quantity</td>";  
     newRow.append(cols);
@@ -37,17 +37,17 @@ function attTable() {
     });
 }
 
-function limpaTabela(){
+const clearTable = () => {
     $("#table-produtos tr").remove();
     $('#product').val('');
     $('#quantity').val('');
 }
 
-function adicionaItem() {
+const addItem = () => {
     let newProduct = $('#product').val();
     let newQuantity = parseInt($('#quantity').val());
     let arrExists = products.filter(elem => elem.name == newProduct);
-    if(((typeof(newProduct) !== 'string' || typeof(newQuantity) !== 'number') || newProduct == '' || isNaN(newQuantity))){
+    if(typeof(newProduct) !== 'string' || newProduct == ''){
         addedProduct('danger', 'Error');
     }else if(arrExists.length == 0){
         products = [
@@ -65,7 +65,7 @@ function adicionaItem() {
         });
         addedProduct('warning', 'Warning');
     }
-    limpaTabela();
+    clearTable();
     attTable();
 }
 
